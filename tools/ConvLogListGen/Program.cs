@@ -50,7 +50,7 @@ namespace ConvLogListGen
 
 			string[] files = Directory.GetFiles(config.InputDirectory, "*", SearchOption.AllDirectories);
 			for (int i = 0; i < files.Length; ++i) {
-				string fname   = files[i];
+				string fname   = files[i].Replace('\\', '/');
 				var    matches = Regex.Matches(fname, config.InputPattern);
 
 				if (matches.Count == 1) {
